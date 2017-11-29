@@ -30,10 +30,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
-<<<<<<< HEAD
     "prop-types": "^15.6.0",
-=======
->>>>>>> 30a9f3679a1b03efa7a19eb4f54858849ebe9503
     "raf": "3.4.0",
     "react": "^16.2.0",
     "react-dev-utils": "^4.2.1",
