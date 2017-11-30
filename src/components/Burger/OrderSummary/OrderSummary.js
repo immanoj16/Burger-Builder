@@ -2,6 +2,7 @@ import React from 'react';
 
 import Aux from '../../../hoc/Aux';
 import { Ingredient, Close } from './OrderSummary.css';
+import Button from '../../UI/Button/Button';
 
 const OrderSummary = (props) => {
 
@@ -16,13 +17,15 @@ const OrderSummary = (props) => {
 
   return (
     <Aux>
-      <span className={Close} onClick={props.modalClosed}>X</span>
+      <span className={Close} onClick={props.purchaseCancelled}>X</span>
       <h3>Your Order!</h3>
       <p>A delicious berger with the following ingredients:</p>
       <ul>
         {ingredientSummary}
       </ul>
       <p>Proceed to Checkout?</p>
+      <Button btnType="Danger" clicked={props.purchaseCancelled}>CANCEL</Button>
+      <Button btnType="Success" clicked={props.purchaseContinued}>CONTINUE</Button>
     </Aux>
   );
 }
