@@ -98,7 +98,7 @@ class BurgerBuilder extends Component {
         email: 'mmaharana14@gmail.com',
         address: {
           city: 'Bhubaneswar',
-          pin: '75003',
+          pin: '751003',
           country: 'India'
         }
       },
