@@ -9,12 +9,60 @@ import Input from '../../../components/UI/Input/Input';
 class ContactData extends Component {
 
   state = {
-    name: '',
-    email: '',
-    address: {
-      street: '',
-      postalCode: ''
+    orderForm: {
+      name: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Name'
+        },
+        value: ''
+      },
+      email: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'email',
+          placeholder: 'Your E-mail'
+        },
+        value: ''
+      },
+      city: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your City'
+        },
+        value: ''
+      },
+      pin: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'ZIP code'
+        },
+        value: ''
+      },
+      country: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Country'
+        },
+        value: ''
+      },
+      deliveryMethod: {
+        elementType: 'select',
+        elementConfig: {
+          option: [
+            {value: 'fastest', displayValue: 'Fastest'},
+            {value: 'cheapest', displayValue: 'Fheapest'}
+          ],
+          placeholder: 'Your Name'
+        },
+        value: ''
+      }
     },
+
     loading: false
   }
 
@@ -24,16 +72,6 @@ class ContactData extends Component {
     const order = {
       ingredients: this.props.ingredients,
       price: this.props.totalPrice,
-      customer: {
-        name: 'Manoj Kumar',
-        email: 'mmaharana14@gmail.com',
-        address: {
-          city: 'Bhubaneswar',
-          pin: '751003',
-          country: 'India'
-        }
-      },
-      deliveryMethod: 'fastest'
     }
     axios.post('/orders.json', order)
       .then(response => {
@@ -49,10 +87,10 @@ class ContactData extends Component {
 
     let form = (
       <form>
-        <Input inputtype="input" type="text" name="name" placeholder="Your Name" />
-        <Input inputtype="input" type="email" name="email" placeholder="Your Mail" />
-        <Input inputtype="input" type="text" name="street" placeholder="Street" />
-        <Input inputtype="input" type="text" name="postal" placeholder="Postal Code" />
+        <Input elementType='' elementConfig='' value='' />
+        <Input elementType='' elementConfig='' value='' />
+        <Input elementType='' elementConfig='' value='' />
+        <Input elementType='' elementConfig='' value='' />
         <Button btnType='Success' clicked={this.orderHandler}>Order</Button>
       </form>
     );
