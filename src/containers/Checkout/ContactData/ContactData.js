@@ -53,11 +53,10 @@ class ContactData extends Component {
       deliveryMethod: {
         elementType: 'select',
         elementConfig: {
-          option: [
+          options: [
             {value: 'fastest', displayValue: 'Fastest'},
             {value: 'cheapest', displayValue: 'Fheapest'}
-          ],
-          placeholder: 'Your Name'
+          ]
         },
         value: ''
       }
