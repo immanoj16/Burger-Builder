@@ -55,7 +55,7 @@ class ContactData extends Component {
         elementConfig: {
           options: [
             {value: 'fastest', displayValue: 'Fastest'},
-            {value: 'cheapest', displayValue: 'Fheapest'}
+            {value: 'cheapest', displayValue: 'Cheapest'}
           ]
         },
         value: ''
@@ -82,6 +82,10 @@ class ContactData extends Component {
       })
   }
 
+  inputChangedHandler = (event) => {
+    console.log(event.target.value);
+  }
+
   render () {
 
     const formElements = [];
@@ -100,7 +104,8 @@ class ContactData extends Component {
             key={formElement.id}
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value} />
+            value={formElement.config.value}
+            changed={this.inputChangedHandler} />
         ))}
         <Button btnType='Success' clicked={this.orderHandler}>Order</Button>
       </form>
