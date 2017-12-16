@@ -8,7 +8,7 @@ const Input = (props) => {
 
   const inputClasses = [classes.InputElement];
 
-  if (props.invalid) {
+  if (props.invalid && props.shouldValidate) {
     inputClasses.push(classes.Invalid);
   }
 
